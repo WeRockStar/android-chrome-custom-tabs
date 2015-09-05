@@ -76,12 +76,14 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, "demo@hotmail.com");
         intent.putExtra(Intent.EXTRA_SUBJECT, "demo subject");
         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
+        
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(customTabsSession);
         builder.setShowTitle(true);
         builder.setToolbarColor(Color.rgb(236, 64, 122));
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.backspace));
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.send);
         builder.setActionButton(bitmap, "Send email", pendingIntent);
+
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(this, uri);
     }
