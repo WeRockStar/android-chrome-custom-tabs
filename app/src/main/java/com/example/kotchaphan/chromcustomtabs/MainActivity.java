@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setShowTitle(true);
         builder.setToolbarColor(Color.rgb(236, 64, 122));
         builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.backspace));
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.backspace);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.send);
         builder.setActionButton(bitmap, "Send email", pendingIntent);
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(this, uri);
